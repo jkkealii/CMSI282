@@ -47,8 +47,8 @@
       \item f = \(\Theta\)(g)
       \item f = \(\Omega\)(g)
       \item f = \(\Omega\)(g)
-      \item f = \(monster condom\)(g)
-      \item f = 
+      \item f = \(\Omega\)(g)
+      \item f = \(\Omega\)(g)
       \item f = \(\Omega\)(g)
       \item f = \(O\)(g)
       \item f = \(\Omega\)(g)
@@ -153,7 +153,7 @@
       \newline
       $9^{4825}$ (mod 35)	= 1
       \newline
-      1 - 1 (mod 35) = 1
+      1 - 1 (mod 35) = 0
       \newline
       Thus, $4^{1536}$ - $9^{4825}$ is divisible by 35.
     \item
@@ -167,20 +167,27 @@
       \newline
       $6^{123456}$ = $6^6$ $\ast$ $6^{123450}$ = $6^6$ $\ast$ $6^{rem(123450,30) 	   (mod 31)}$ = $6^6$ (mod 31) = 1
       \newline
-      $5^{30000}$ - $6^123456$ = (1 - 1)(mod 31) = 0
+      $5^{30000}$ - $6^{123456}$ = (1 - 1)(mod 31) = 0
       \newline
       Thus, the difference of $5^{30000}$ and $6^{123456}$ is a multiple of 31.
     \item
-      For $b$ = 16, the repeated squaring method uses \(O\)($log_2$(16)) 			  multiplications. However, using left-to-right binary exponentiation, only 
-      \(O\)($log$(16)) multiplications are needed.
+      For $b$ = 15, the repeated squaring method uses 6 multiplications, as shown 		below:
+      \newline
+      $a^{15}$ = $x$ $\ast$ ($x$ $\ast$ [$x$ \(\ast\) \(x^2\)]$^2$\()^2\)
+      \newline
+      However, using addition-chain exponentiation, only 5 multiplications are 	   	   needed if $x^3$ is re-used, as shown below:
+      \newline
+      $a^{15}$ = $x^3$ $\ast$ ([$x^3$\(]^2\)$)^2$
     \item
       $2^{125}$ (mod 127) = 64
     \item
-      program
+      $problem9.rb$
+      \newline
+      The running time of this algorithm is \(O\)(n).
     \item
       Wilson's theorem cannot be used as the basis for a primality test because 	  of the fact that it is ineffective as a test in practice. This is because 	  computing ($N$ - 1)! mod $N$ for large $N$ is difficult, and other 			  primality tests can be used that would be faster and more efficient.
     \item
-      program
+      $problem11.py$
     \end{enumerate}
     
 \end{document}
