@@ -1,0 +1,3 @@
+class KirkmanSolver(object):
+
+    
