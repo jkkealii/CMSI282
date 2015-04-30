@@ -27,18 +27,24 @@ public class KirkmanSolver {
         schoolgirls[1][0][2] = 'G';
 
         // initialize the pairs table based off of the constraints
-        for (char i = 'A'; i < 'O'; i += 4) {
+        for (int i = 0; i < 15; i += 4) {
             for (int j = 0; j < 3; j++) {
                 if (j == 2) {
-                    pairs[intAt(i - 'A')][intAt(i - 'A') - 2] = true;
-                    pairs[intAt(i - 'A') - 2][intAt(i - 'A')] = true;
+                    pairs[i + j][i + j - 2] = true;
+                    pairs[i + j - 2][i + j] = true;
                 } else {
-                    pairs[intAt(i - 'A')][intAt(i - 'A') + 1] = true;
-                    pairs[intAt(i - 'A') + 1][intAt(i - 'A')] = true;
+                    pairs[i + j][i + j + 1] = true;
+                    pairs[i + j + 1][i + j] = true;
                 }
             }
         }
-        
+        pairs[intAt((char) ('A' - 'A'))][intAt((char) ('D' - 'A'))] = true;
+        pairs[intAt((char) ('D' - 'A'))][intAt((char) ('A' - 'A'))] = true;
+        pairs[intAt((char) ('A' - 'A'))][intAt((char) ('G' - 'A'))] = true;
+        pairs[intAt((char) ('G' - 'A'))][intAt((char) ('A' - 'A'))] = true;
+        pairs[intAt((char) ('D' - 'A'))][intAt((char) ('G' - 'A'))] = true;
+        pairs[intAt((char) ('G' - 'A'))][intAt((char) ('D' - 'A'))] = true;
 
+        
     }
 }
