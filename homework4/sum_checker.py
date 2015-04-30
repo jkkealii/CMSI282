@@ -59,7 +59,7 @@ def number_check(_input):
         return False
 
 test_set = [2, 3, 4, 5, 12, 34]
-value = 16
+value = 46
 if (sum_checker(test_set, value)):
     print ("found subset with given sum")
 else:
