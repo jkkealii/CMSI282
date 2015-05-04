@@ -84,7 +84,6 @@ public class KirkmanSolver {
         pairs[(elua - 'A')][(ekahi - 'A')] = isPair;
     }
 
-    // have these two girls already walked together?
     private static boolean pairExists (char uno, char dos) {
         return pairs[(uno - 'A')][(dos - 'A')] && pairs[(dos - 'A')][(uno - 'A')];
     }
@@ -100,8 +99,7 @@ public class KirkmanSolver {
             starter = newStart;
         }
 
-        if (!forward) {
-            // erase the pairs
+        if (!forward) { // erase the pairs
             if (secondGirl) {
                 setPair((char)(starter - 1), penultimateFemale, false);
             } else if (!firstGirl) {
@@ -131,7 +129,7 @@ public class KirkmanSolver {
                     System.out.println("finished");
                     endTime = System.currentTimeMillis();
                     totalTime = (endTime - startTime)/1000.00;
-                    System.out.println("KIRKMAN TOOK... " + totalTime + " SECONDS, BITCH");
+                    System.out.println("KirkmanSolver took... " + totalTime + " seconds, sir");
                     printFemales();
                     return;            
                 } else {
