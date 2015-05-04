@@ -23,17 +23,13 @@ def sum_checker(num_set, value):
         # Initialize 2D table, all false ([rows][columns])
         subset = [[False]*(set_length + 1) for x in range(value + 1)]
 
-        # sobset = [['0']*(set_length + 1) for x in range(value + 1)]]
-
         # If sum is 0, answer is true
         for i in range(set_length + 1):
             subset[0][i] = True
-            # sobset[0][i] = 0
 
         # If sum isn't 0 and set is empty, answer is false
         for i in range(1, value + 1):
             subset[i][0] = False
-            # sobset[i][0] = 1
 
         # Fill in table from bottom-up
         for i in range(1, value + 1):
@@ -59,7 +55,7 @@ def number_check(_input):
         return False
 
 test_set = [2, 3, 4, 5, 12, 34]
-value = 46
+value = 37
 if (sum_checker(test_set, value)):
     print ("found subset with given sum")
 else:
