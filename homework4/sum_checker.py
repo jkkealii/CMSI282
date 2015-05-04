@@ -5,7 +5,7 @@ def sum_checker(num_set, value):
     set_length = len(num_set)
 
     if set_length == 0:
-        raise ValueError('No numeric list given')
+        return value == 0
     for i in num_set:
         if not number_check(i):
             raise ValueError('Elements in list must be a number')
@@ -19,7 +19,6 @@ def sum_checker(num_set, value):
     elif value == MAX:
         return True
     else:
-        num_set.sort()
         # Initialize 2D table, all false ([rows][columns])
         subset = [[False]*(set_length + 1) for x in range(value + 1)]
 
@@ -54,8 +53,8 @@ def number_check(_input):
     except ValueError:
         return False
 
-test_set = [2, 3, 4, 5, 12, 34]
-value = 37
+test_set = [4, 6, 1, 6, 10, 7]
+value = 3
 if (sum_checker(test_set, value)):
     print ("found subset with given sum")
 else:
