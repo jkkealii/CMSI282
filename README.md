@@ -7,4 +7,8 @@ Latest Homework 2 commit: [2015/03/03](https://github.com/jkkealii/CMSI282/commi
 
 Latest Homework 3 commit: [2015/04/09](https://github.com/jkkealii/CMSI282/commit/cf1731ef12a276e4a9f8408b69430c7acae3896f)
 
-Homework 4 in progress...
+Latest Homework 4 commit: [2015/05/04](https://github.com/jkkealii/CMSI282/commit/94b7ad62a6da3e49d0e39273b6236f1b62db1be9)
+Because of the way our KirkmanSolver works, it requires a much increased stack size so it doesn't overflow.
+'''
+java -Xss100g KirkmanSolver
+'''
